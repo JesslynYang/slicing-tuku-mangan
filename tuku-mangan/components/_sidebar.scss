@@ -1,0 +1,256 @@
+#toggle-navbar {
+  @include button;
+  margin-right: 15px;
+  display: block;
+
+  @include xl {
+    display: none;
+  }
+}
+
+.col-right-sidebar,
+.col-navbar {
+  &.appear {
+    aside {
+      opacity: 1;
+    }
+  }
+}
+
+.col-navbar {
+  &.appear {
+    .sidebar {
+      left: 0;
+    }
+  }
+}
+
+.col-right-sidebar {
+  position: absolute;
+  z-index: 4;
+
+  &.appear {
+    .cart-sidebar {
+      right: 0;
+    }
+  }
+}
+
+.sidebar {
+  background-color: $aside;
+  padding: 50px 0;
+  padding-bottom: 60px;
+
+  border-right: 1px solid $border;
+
+  width: 130px;
+  height: 100vh;
+  overflow-y: scroll;
+
+  position: fixed;
+  top: 0;
+  left: -100vw;
+
+  .sidebar-top {
+    padding-bottom: 50px;
+    border-bottom: 1px solid $border;
+  }
+
+  #toggle-navbar {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+
+    @include lg {
+      display: none;
+    }
+  }
+
+  @include lg {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+}
+
+.sidebar- {
+  &item {
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: $default;
+
+    border-radius: 50%;
+
+    margin-bottom: 27px;
+
+    &.active {
+      background: $text;
+      svg {
+        path {
+          stroke: $aside;
+        }
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      path {
+        stroke: $text;
+      }
+    }
+
+    &-container {
+      padding-top: 50px;
+    }
+  }
+}
+
+.cart-sidebar {
+  width: 100vw;
+  position: fixed;
+  height: 100vh;
+  right: -100vw;
+  top: 0;
+  background-color: $aside;
+
+  overflow-y: scroll;
+
+  padding: 50px 10px;
+
+  @include breakpoint(450px) {
+    padding: 70px 50px;
+  }
+
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+
+  z-index: 4;
+
+  @include breakpoint(495px) {
+    width: 495px;
+  }
+
+  .food- {
+    &card {
+      padding: 0;
+
+      padding-bottom: 0;
+      margin-top: 0px;
+
+      border: none;
+
+      max-width: 100%;
+    }
+
+    &img {
+      margin-top: 0;
+      margin-right: 10px;
+
+      width: 60px;
+      height: 60px;
+      img {
+        width: 45px;
+        height: 45px;
+      }
+
+      @include breakpoint(450px) {
+        width: 80px;
+        height: 80px;
+
+        img {
+          width: 68px;
+          height: 68px;
+        }
+      }
+    }
+
+    &price,
+    &name {
+      font-size: 13px;
+      line-height: 18px;
+
+      @include breakpoint(450px) {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+
+    &btn {
+      margin-top: 50px;
+      margin-bottom: 20px;
+    }
+
+    &link {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      text-decoration-line: underline;
+
+      color: $secondary;
+    }
+  }
+}
+
+.cart- {
+  &details {
+    margin: 18px 0;
+
+    h4 {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+
+      @include breakpoint(450px) {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &label {
+    color: $secondary;
+  }
+
+  &value {
+    color: $text;
+  }
+}
+
+.btn-number {
+  @include button;
+  @include flex-cc;
+
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+
+  background: $text;
+
+  &.decrease {
+    background-color: $danger;
+  }
+}
+
+.input-number {
+  @include input;
+  width: 44px;
+  height: 22px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 22px;
+  text-align: center;
+
+  color: $text;
+
+  @include breakpoint(450px) {
+    font-size: 18px;
+  }
+}
