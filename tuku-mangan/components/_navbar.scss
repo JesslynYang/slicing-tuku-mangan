@@ -1,75 +1,62 @@
 .nav {
-  @include flex-bc;
-  flex-wrap: wrap;
-
-  padding: 50px 14px 24px 14px;
-
-  @include md {
-    flex-wrap: nowrap;
-  }
-
-  @include xl {
-    padding: 50px;
-  }
-
-  #toggle-navbar {
-    border-radius: 50%;
-    overflow: hidden;
-
-    padding: 4px;
-
-    border: 2px solid $primary;
-
-    img {
-      width: 40px;
-      height: 40px;
+    @include flex-bc;
+    flex-wrap: wrap;
+    padding: 50px 14px 24px 14px;
+    @include md {
+        flex-wrap: nowrap;
     }
-  }
+    @include xl {
+        padding: 50px;
+    }
+    #toggle-navbar {
+        border-radius: 50%;
+        overflow: hidden;
+        padding: 4px;
+        border: 2px solid $primary;
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
 }
 
 .nav- {
-  &title {
-    font-weight: 600;
-    font-size: 26px;
-    line-height: 32px;
-    color: $text;
-  }
-
-  &desc {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    /* identical to box height */
-
-    color: $secondary;
-  }
-
-  &btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #fdfdfd;
-    border: 1px solid $border;
-
-    position: relative;
-
-    &.cart {
-      margin-left: 16px;
+    &title {
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 32px;
+        color: $text;
     }
-
-    &.cart::after {
-      position: absolute;
-
-      content: ".";
-      top: 0;
-      right: 0;
-
-      color: $default;
-      background: $primary;
-      width: 11px;
-      height: 11px;
-
-      border-radius: 50%;
+    &desc {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height */
+        color: $secondary;
     }
-  }
+    &btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #fdfdfd;
+        border: 1px solid $border;
+        position: relative;
+        &.cart {
+            margin-left: 16px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        &.cart::after {
+            position: absolute;
+            content: ".";
+            top: 0;
+            right: 0;
+            color: $default;
+            background: $primary;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+        }
+    }
 }

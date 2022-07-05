@@ -147,17 +147,16 @@ body {
 }
 
 .cart-sidebar {
-  width: 100vw;
   position: fixed;
   height: 100vh;
   right: -100vw;
   top: 0;
+  z-index: 4;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
   background-color: #fff;
   overflow-y: scroll;
   padding: 50px 10px;
-  transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
-  z-index: 4;
 }
 @media (min-width: 450px) {
   .cart-sidebar {
@@ -322,6 +321,9 @@ body {
 }
 .nav-btn.cart {
   margin-left: 16px;
+}
+.nav-btn:hover {
+  cursor: pointer;
 }
 .nav-btn.cart::after {
   position: absolute;
